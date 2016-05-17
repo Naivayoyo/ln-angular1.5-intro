@@ -1,0 +1,24 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "name": "ln-angular-intro",
+  "description": "An intro to AngularJS",
+  "repository": "",
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "tmp": "0.0.28",
+    "bower": "^1.7.0",
+    "shelljs": "^0.7.0"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+
+    "prestart": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8000",
+
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+
+    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + cat('bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+  }
+}

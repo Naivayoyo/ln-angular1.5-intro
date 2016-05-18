@@ -10,42 +10,11 @@
 </head>
 <body ng-app="lnAngularApp" ng-controller="lnAngularAppCtrl as vm">
 
-	
-		<h1>{{vm.pageTitle}}</h1>
-
-		<ul class="task-list">
-			
-			<li ng-repeat="task in vm.tasks"
-					class="task-list__item"
-					ng-class="{selected: task === vm.selectedTask}" 
-					ng-click="vm.onSelectTask(task)">
-
-					<span class="badge">{{task.id}}</span> {{task.title}}
-			</li>
-
-		</ul>
-
-
-		<div ng-if="vm.selectedTask" class="task-details">
-			<h3>{{vm.selectedTask.title}}
-			
-			<div class="task-details__form-group">
-				<label class="task-details__form-label">ID: </label> {{vm.selectedTask.id}}
-			</div>
-			<div class="task-details__form-group">
-				<label class="task-details__form-label">Subject: </label>
-				<input class="task-details__form-input" ng-model="vm.selectedTask.title" placeholder="Task Subject"/>
-			</div>
-			<div class="task-details__form-group">
-				<label class="task-details__form-label">Description: </label>
-				<input class="task-details__form-input" ng-model="vm.selectedTask.description" placeholder="Task Description"/>
-			</div>
-		</div>
-
-	  
-  
+	<task-list tasks="vm.tasks" selected-task="vm.selectedTask"></task-list>
 
   <script src="app/lnAngularApp.js"></script>
+  <script src="app/components/task-list.js"></script>
+  <script src="app/components/task-details.js"></script>
 
 </body>
 </html>

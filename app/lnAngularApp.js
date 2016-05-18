@@ -1,12 +1,7 @@
 (function(angular) {
-	
-
 	/*	the lnAngularApp Module	*/
 	angular.module('lnAngularApp', []).controller('lnAngularAppCtrl', function() {
 		var ctrl = this;
-
-		ctrl.pageTitle = 'My Task List';
-		ctrl.editorTitle = 'Task Editor';
 		ctrl.selectedTask = null;
 
 		ctrl.tasks = [
@@ -22,10 +17,6 @@
 			{	id: 10, title: 'Make dinner', description: 'You have guests coming' },
 			{	id: 11, title: 'Rent a movie', description: 'Time to relax' }
 		];
-
-		ctrl.onSelectTask = function(task) {
-			ctrl.selectedTask = task;
-		}
 
 	});
 

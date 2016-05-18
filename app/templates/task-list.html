@@ -1,4 +1,4 @@
-<h1>{{$ctrl.pageTitle}}</h1>
+<h2>{{$ctrl.pageTitle}}</h2>
 <ul class="task-list">
 			
 	<li ng-repeat="task in $ctrl.tasks"
@@ -6,7 +6,7 @@
 			ng-class="{selected: task === $ctrl.selectedTask}" 
 			ng-click="$ctrl.onSelectTask(task)">
 
-			<span class="badge">{{task.id}}</span> {{task.title}}
+			<span class="task-list__badge">{{task.id}}</span> {{task.title}}
 	</li>
 
 </ul>

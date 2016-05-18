@@ -6,7 +6,7 @@
 
 
 		ctrl.$onChanges = function() {
-			ctrl.show = typeof(ctrl.selectedTask) === 'object';
+			ctrl.show = ctrl.selectedTask.id;
 		}
 	}
 

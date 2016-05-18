@@ -1,16 +1,36 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" >
 <head>
   <meta charset="utf-8">
 	<title>Angular Playground</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="css/stylin.css">
+  <link rel="stylesheet" href="app/css/stylin.css">
 
   <script src="bower_components/angular/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="lnAngularApp" ng-controller="lnAngularAppCtrl as vm">
+
+	<div class="content">
+		<h1>{{vm.pageTitle}}</h1>
+
+	  <div><label>Task ID: </label> {{vm.task.id}}</div>
+	  <div><label>Task Title: </label> {{vm.task.title}}</div>
+	  <div><label>Task Description: </label> {{vm.task.description}}</div>
+
+	  <h2>{{vm.editorTitle}}</h2>
+		<div>
+	    <label>Task Title: </label>
+	    <input ng-model="vm.task.title" placeholder="Task Title">
+	  </div>
+	  <div>
+	    <label>Task Description: </label>
+	    <input ng-model="vm.task.description" placeholder="Task Description">
+	  </div>
+	</div>
 	
-	<p>1 + 10 = {{ 1 + 10 }}</p>
+  
+
+  <script src="app/lnAngularApp.js"></script>
 
 </body>
 </html>

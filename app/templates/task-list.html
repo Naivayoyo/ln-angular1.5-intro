@@ -1,0 +1,14 @@
+<h2>{{$ctrl.pageTitle}}</h2>
+<ul class="task-list">
+			
+	<li ng-repeat="task in $ctrl.tasks"
+			class="task-list__item"
+			ng-class="{selected: task === $ctrl.selectedTask}" 
+			ng-click="$ctrl.onSelectTask(task)">
+
+			<span class="task-list__badge">{{task.id}}</span> {{task.title}}
+	</li>
+
+</ul>
+
+<task-details selected-task="$ctrl.selectedTask"></task-details>

@@ -25,7 +25,7 @@ h2, h3 {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 100%;
+  width: 70%;
 }
 .task-list__item {
   cursor: pointer;
@@ -78,17 +78,7 @@ h2, h3 {
   font-weight: bold;
 }
 .task-details__form-input {
-  border: none;
   padding-left: 10px;
   padding-bottom: 5px;
-  width: 25%;
-}
-.task-details__form-input:focus {
-  border-bottom: 2px solid #999;
-  outline: none;
-  font-size: .9em;
-}
-
-.task-details__form-input:hover {
-  font-size: .9em;
+  width: 50%;
 }

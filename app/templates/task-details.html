@@ -1,12 +1,12 @@
 <div ng-if="$ctrl.show" class="task-details">
-	<h3>{{$ctrl.selectedTask.title}}
+	<h3>{{$ctrl.selectedTask.subject}}
 	
 	<div class="task-details__form-group">
 		<label class="task-details__form-label">ID: </label> {{$ctrl.selectedTask.id}}
 	</div>
 	<div class="task-details__form-group">
 		<label class="task-details__form-label">Subject: </label>
-		<input class="task-details__form-input" ng-model="$ctrl.selectedTask.title" placeholder="Task Subject"/>
+		<input class="task-details__form-input" ng-model="$ctrl.selectedTask.subject" placeholder="Task Subject"/>
 	</div>
 	<div class="task-details__form-group">
 		<label class="task-details__form-label">Description: </label>

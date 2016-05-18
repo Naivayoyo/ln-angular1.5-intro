@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 	<title>Angular Playground</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="app/css/stylin.css">
 
   <script src="bower_components/angular/angular.min.js"></script>
@@ -11,7 +11,7 @@
 <body ng-app="lnAngularApp" ng-controller="lnAngularAppCtrl as vm">
 
 	
-		<h1>{{vm.pageTitle}}</h1>
+		<h2>{{vm.pageTitle}}</h2>
 
 		<ul class="task-list">
 			
@@ -20,7 +20,7 @@
 					ng-class="{selected: task === vm.selectedTask}" 
 					ng-click="vm.onSelectTask(task)">
 
-					<span class="badge">{{task.id}}</span> {{task.title}}
+					<span class="task-list__badge">{{task.id}}</span> {{task.title}}
 			</li>
 
 		</ul>

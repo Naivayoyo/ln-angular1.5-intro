@@ -10,24 +10,39 @@
 </head>
 <body ng-app="lnAngularApp" ng-controller="lnAngularAppCtrl as vm">
 
-	<div class="content">
+	
 		<h1>{{vm.pageTitle}}</h1>
 
-	  <div><label>Task ID: </label> {{vm.task.id}}</div>
-	  <div><label>Task Title: </label> {{vm.task.title}}</div>
-	  <div><label>Task Description: </label> {{vm.task.description}}</div>
+		<ul class="task-list">
+			
+			<li ng-repeat="task in vm.tasks"
+					class="task-list__item"
+					ng-class="{selected: task === vm.selectedTask}" 
+					ng-click="vm.onSelectTask(task)">
 
-	  <h2>{{vm.editorTitle}}</h2>
-		<div>
-	    <label>Task Title: </label>
-	    <input ng-model="vm.task.title" placeholder="Task Title">
-	  </div>
-	  <div>
-	    <label>Task Description: </label>
-	    <input ng-model="vm.task.description" placeholder="Task Description">
-	  </div>
-	</div>
-	
+					<span class="badge">{{task.id}}</span> {{task.title}}
+			</li>
+
+		</ul>
+
+
+		<div ng-if="vm.selectedTask" class="task-details">
+			<h3>{{vm.selectedTask.title}}
+			
+			<div class="task-details__form-group">
+				<label class="task-details__form-label">ID: </label> {{vm.selectedTask.id}}
+			</div>
+			<div class="task-details__form-group">
+				<label class="task-details__form-label">Subject: </label>
+				<input class="task-details__form-input" ng-model="vm.selectedTask.title" placeholder="Task Subject"/>
+			</div>
+			<div class="task-details__form-group">
+				<label class="task-details__form-label">Description: </label>
+				<input class="task-details__form-input" ng-model="vm.selectedTask.description" placeholder="Task Description"/>
+			</div>
+		</div>
+
+	  
   
 
   <script src="app/lnAngularApp.js"></script>
